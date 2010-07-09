@@ -1,0 +1,12 @@
+{% extends "bone.html" %}
+
+{% block content %}
+<ul>
+	{% for project_id, project in c.projects %}
+		<li>
+			<a href="{{ url(controller='directory', action='details', project_id=project_id) }}">{{ project.name }}</a><br/>
+			<small>{{ project.url }}</small>
+		</li>
+	{% endfor %}
+</ul>
+{% endblock %}

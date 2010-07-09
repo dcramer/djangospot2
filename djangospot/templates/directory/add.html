@@ -1,0 +1,15 @@
+{% extends "bone.html" %}
+
+{% block content %}
+	{{ h.form('', method='post') }}
+
+	<p>Project Name: {{ h.text('name', value=c.form_result.get('name', '')) }}</p>
+	<p>{{ c.form_errors.get('email', '') }}</p>
+
+	<p>Project URL: {{ h.text('url', value=c.form_result.get('url', '')) }}</p>
+	<p>{{ c.form_errors.get('url', '') }}</p>
+
+	{{ h.submit('submit', 'Submit') }}
+
+	{{ h.end_form() }}
+{% endblock %}
